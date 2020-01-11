@@ -1,1 +1,2 @@
-document.addEventListener('DOMContentLoaded', alert('DOM loaded'));
+import './assets/js/common';
+import './assets/scss/index.scss';
