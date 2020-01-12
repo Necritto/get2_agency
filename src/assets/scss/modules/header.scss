@@ -20,7 +20,10 @@
   flex-basis: 80%;
   justify-content: space-around;
   align-items: center;
-  @include font;
+
+  a {
+    @include font;
+  }
 }
 
 .nav__ul {
@@ -48,7 +51,10 @@
 
 .help::after {
   content: '|';
-  padding-left: 15%;
+  padding-left: 12%;
+  color: #ffffff;
+  position: relative;
+  top: 3px;
 }
 
 .login {
@@ -57,6 +63,7 @@
   border-radius: 5px;
   border: 2px solid #ffffff;
   background-color: transparent;
+  cursor: pointer;
   @include font;
 }
 
@@ -104,7 +111,7 @@
 .searchBox__item-text {
   @include font;
   color: #b7b7b7;
-  font-weight: 400;
+  font-weight: $mainFontWeight;
   letter-spacing: 0.8px;
 }
 
@@ -126,29 +133,67 @@
   letter-spacing: 0.9px;
   background-color: transparent;
   font-size: 36px;
+  cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .headerContent {
   display: flex;
   flex-direction: column;
+  position: relative;
+  top: -190px;
+}
+
+.headerContent__theme {
+  @include font;
+  font-size: 50px;
+  margin-bottom: 55px;
+  letter-spacing: 1.8px;
+
+  span {
+    border-bottom: 2px solid #ffffff;
+  }
+}
+
+.headerContent__descr {
+  @include font;
+  text-transform: none;
+  font-weight: $mainFontWeight;
+  padding-bottom: 70px;
+}
+
+.headerContent__icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerContent__content-item {
+  @include font;
+  font-size: 40%;
+  font-weight: $mainFontWeight;
+  text-transform: none;
+
+  .place::before {
+    @include iconPosition;
+    content: url(../img/place.png);
+  }
+
+  .time::before {
+    @include iconPosition;
+    content: url(../img/timezone.png);
+  }
+
+  .weather::before {
+    @include iconPosition;
+    content: url(../img/rain.png);
+  }
+
+  .flights::before {
+    @include iconPosition;
+    content: url(../img/flight.png);
+  }
+
+  .hotels::before {
+    @include iconPosition;
+    content: url(../img/hotel.png);
+  }
 }

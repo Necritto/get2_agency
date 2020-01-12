@@ -22,3 +22,9 @@
   text-transform: uppercase;
   letter-spacing: $spacing;
 }
+
+@mixin iconPosition {
+  position: relative;
+  top: 10px;
+  margin-right: 10px;
+}
