@@ -1,24 +1,21 @@
-@import "utils/vars.scss";
-@import "utils/mixins.scss";
-@import "utils/reset.scss";
-@import "utils/media";
+@import "./utils/vars.scss";
+@import "./utils/mixins.scss";
+@import "./utils/reset.scss";
+@import "./utils/media.scss";
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: $mainFont;
   font-size: $mainFontSize;
   font-weight: $mainFontWeight;
 }
 
-.container {
-  display: flex;
-  width: 100%;
-  position: relative;
+.wrapper {
+  width: 95%;
   margin: 0 auto;
+  padding: 3% 0;
   max-width: $desktopWidth;
 }
 
-@import "modules/header.scss";
-@import "modules/main.scss";
-@import "modules/footer.scss";
+@import "./modules/header.scss";
+@import "./modules/main.scss";
+@import "./modules/footer.scss";

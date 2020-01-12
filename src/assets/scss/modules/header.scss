@@ -1,0 +1,67 @@
+.header {
+  background: no-repeat center/cover url(../img/header_bg.jpg);
+  width: 100%;
+  height: 100%;
+}
+
+.log {
+  width: 200px;
+  height: 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-basis: 80%;
+  justify-content: space-around;
+  align-items: center;
+  @include font;
+}
+
+.nav__ul {
+  display: flex;
+  flex-basis: 60%;
+  justify-content: space-around;
+}
+
+.nav__item:last-child {
+  color: #9a6c71;
+
+  &::after {
+    content: url(../img/3_nokta.png);
+    padding-left: 10px;
+    position: relative;
+    top: -5px;
+  }
+}
+
+.nav__addition {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 22%;
+}
+
+.help::after {
+  content: '|';
+  padding-left: 15%;
+}
+
+.login {
+  width: 196px;
+  height: 77px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  @include font;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  opacity: 0.4;
+}
