@@ -2,13 +2,29 @@
   @if (unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
+
   @if (unitless($context)) {
     $context: $context * 1px;
   }
+
   @return $pixels / $context * 1rem;
 }
 
-@mixin size($width,$height: $width) {
+@mixin size($width, $height: $width) {
   width: $width;
   height: $height;
+}
+
+@mixin font {
+  color: #ffffff;
+  font-size: $smallFontSize;
+  font-weight: $bold;
+  text-transform: uppercase;
+  letter-spacing: $spacing;
+}
+
+@mixin iconPosition {
+  position: relative;
+  top: 10px;
+  margin-right: 10px;
 }
