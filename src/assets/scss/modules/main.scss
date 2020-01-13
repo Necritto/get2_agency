@@ -1,0 +1,161 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.tour-header__title {
+  color: #1d1d21;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-bottom: 30px;
+}
+
+.tour-header__descr {
+  @include font;
+  color: #999999;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.tour-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tour-content__card {
+  width: 90 / 4 * 1%;
+  height: 420px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin-bottom: 70px;
+}
+
+.tour-content__card-img {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 20px;
+}
+
+.tour-content__card-header {
+  text-align: center;
+  @include font;
+  color: #1d1d21;
+  font-weight: 400;
+  text-transform: none;
+  margin-bottom: 30px;
+}
+
+.tour-content__card-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  text-align: center;
+
+  .flights::before {
+    content: url(../img/flight_copy.png);
+  }
+
+  .hotels::before {
+    content: url(../img/hotel_copy.png);
+  }
+
+  .cars::before {
+    content: url(../img/car_copy.png);
+  }
+}
+
+.tour-content__card-icons-text {
+  color: #989898;
+  font-size: 70%;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  width: 59px;
+  height: 18px;
+}
+
+.tour-btn {
+  width: 30%;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #cd3333;
+  @include font;
+}
+
+.section-city {
+  background: no-repeat left bottom/30% url(../img/Shape_1.png);
+  background-color: #569ef8;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  @include font;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.cities__header {
+  margin-bottom: 15px;
+}
+
+.cities-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  z-index: 98;
+
+  .city2::before,
+  .city2::after,
+  .city4::before,
+  .city4::after,
+  .city6::before,
+  .city6::after {
+    content: url(../img/Ellipse_3_copy.png);
+    position: relative;
+    top: -4px;
+    margin: 15px;
+  }
+}
+
+.focusedCity {
+  font-size: 50px;
+  position: relative;
+  top: 5px;
+}
+
+.cities-img__item-main {
+  @include positionImg(15px, 150px, 100);
+  border: $border;
+  width: 600px;
+}
+
+.cities-img__item-second {
+  @include positionImg(120px, -30px, 99);
+  border: $border;
+  width: 500px;
+}
+
+.cities-img__item-third {
+  @include positionImg(-430px, 820px, 97);
+  border: $border;
+  width: 400px;
+}
+
+.cities-link {
+  @include font;
+  @include positionImg(-90px, -180px, 98);
+
+  &::after {
+    @include iconPosition(10px, 10px, 0);
+    content: url(../img/sağ_ok.png);
+  }
+}
