@@ -23,8 +23,9 @@
   letter-spacing: $spacing;
 }
 
-@mixin iconPosition {
+@mixin iconPosition($top, $left, $margin) {
   position: relative;
-  top: 10px;
-  margin-right: 10px;
+  top: $top;
+  left: $left;
+  margin-right: $margin;
 }
