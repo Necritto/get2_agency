@@ -29,3 +29,10 @@
   left: $left;
   margin-right: $margin;
 }
+
+@mixin positionImg($top, $left, $z) {
+  position: relative;
+  top: $top;
+  left: $left;
+  z-index: $z;
+}

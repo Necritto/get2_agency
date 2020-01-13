@@ -88,3 +88,74 @@
   background-color: #cd3333;
   @include font;
 }
+
+.section-city {
+  background: no-repeat left bottom/30% url(../img/Shape_1.png);
+  background-color: #569ef8;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  @include font;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.cities__header {
+  margin-bottom: 15px;
+}
+
+.cities-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 auto;
+  z-index: 98;
+
+  .city2::before,
+  .city2::after,
+  .city4::before,
+  .city4::after,
+  .city6::before,
+  .city6::after {
+    content: url(../img/Ellipse_3_copy.png);
+    position: relative;
+    top: -4px;
+    margin: 15px;
+  }
+}
+
+.focusedCity {
+  font-size: 50px;
+  position: relative;
+  top: 5px;
+}
+
+.cities-img__item-main {
+  @include positionImg(15px, 150px, 100);
+  border: $border;
+  width: 600px;
+}
+
+.cities-img__item-second {
+  @include positionImg(120px, -30px, 99);
+  border: $border;
+  width: 500px;
+}
+
+.cities-img__item-third {
+  @include positionImg(-430px, 820px, 97);
+  border: $border;
+  width: 400px;
+}
+
+.cities-link {
+  @include font;
+  @include positionImg(-90px, -180px, 98);
+
+  &::after {
+    @include iconPosition(10px, 10px, 0);
+    content: url(../img/sağ_ok.png);
+  }
+}
