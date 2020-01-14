@@ -1,0 +1,9 @@
+.footer {
+  background-color: #000000;
+}
+
+.copy__text {
+  @include font;
+  font-weight: 400;
+  text-transform: none;
+}
