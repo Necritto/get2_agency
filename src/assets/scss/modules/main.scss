@@ -159,3 +159,148 @@
     content: url(../img/sağ_ok.png);
   }
 }
+
+.section-places {
+  background-color: #f0f0f0;
+}
+
+.section-places__header {
+  text-align: center;
+}
+
+.section-places__header-title {
+  @include font;
+  color: #1d1d21;
+  font-size: 40px;
+  letter-spacing: 1.6px;
+  margin-bottom: 20px;
+}
+
+.section-places__header-descr {
+  @include font;
+  color: #999999;
+  font-weight: 400;
+  text-transform: none;
+  margin-bottom: 50px;
+}
+
+.section-places__type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.section-places__type-item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @include size(200px, 170px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+}
+
+.section-places__type-item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+  @include font;
+  color: #999999;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.focusedPlaces {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+  background-color: #cd3333;
+
+  & p {
+    color: #ffffff;
+  }
+}
+
+.photogprahy::before {
+  @include iconPosition(-15px, 0, 0);
+  content: url(../img/camera.png);
+}
+
+.family::before {
+  @include iconPosition(-15px, 0, 0);
+  content: url(../img/family.png);
+}
+
+.friends::before {
+  @include iconPosition(-5px, 0, 0);
+  content: url(../img/friends.png);
+}
+
+.romantic::before {
+  @include iconPosition(-5px, 0, 0);
+  content: url(../img/romance.png);
+}
+
+.nature::before {
+  @include iconPosition(-5px, 0, 0);
+  content: url(../img/trekking.png);
+}
+
+.posh::before {
+  @include iconPosition(-5px, 0, 0);
+  content: url(../img/luxury.png);
+}
+
+.section-places__card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-places__card-item {
+  display: flex;
+  flex-direction: column;
+  @include size(410px, 500px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+}
+
+.section-places__cart-item-img {
+  margin-bottom: 20px;
+}
+
+.section-places__card-item-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-places__card-item-title {
+  @include font;
+  color: #1d1d21;
+  text-transform: none;
+}
+
+.section-places__card-item-icons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  @include font;
+  color: #999999;
+  font-weight: 400;
+  text-transform: none;
+
+  .flights::before {
+    @include iconPosition(5px, -10px, 0);
+    content: url(../img/flight_copy.png);
+  }
+
+  .hotels::before {
+    @include iconPosition(5px, -10px, 0);
+    content: url(../img/hotel_copy.png);
+  }
+
+  .cars::before {
+    @include iconPosition(5px, -10px, 0);
+    content: url(../img/car_copy.png);
+  }
+}
