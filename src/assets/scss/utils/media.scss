@@ -1,0 +1,140 @@
+@media screen and (max-width: $desktopWidth) {
+
+  .tour-content__card-header {
+    font-size: 60%;
+  }
+
+  .cities-wrap {
+
+    width: 95%;
+
+    .city2::before,
+    .city2::after,
+    .city4::before,
+    .city4::after,
+    .city6::before,
+    .city6::after {
+      content: '';
+    }
+  }
+
+  .cities-img__item-main {
+    @include positionImg(15px, 120px, 100);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(120px, -60px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(-430px, 745px, 97);
+  }
+
+  .cities-link {
+    @include positionImg(-90px, -225px, 98);
+  }
+
+  .section-places__type-item {
+    @include size(170px, 170px);
+  }
+
+  .section-places__card-item {
+    @include size(350px, 465px);
+  }
+
+  .section-places__card-item-title {
+    font-size: rem(40px);
+  }
+
+  .section-places__card-item-icons {
+    font-size: rem(32px);
+  }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+  .log {
+    @include size(100px);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+
+    a {
+      font-size: rem(32px);
+    }
+  }
+
+  .nav__item:last-child {
+
+    &::after {
+      top: -2px;
+    }
+  }
+
+  .help::after {
+    padding-left: 0;
+    left: 12px;
+  }
+
+  .login {
+    @include size(130px, 50px);
+    font-size: rem(32px);
+  }
+
+  .searchBox {
+    width: 35%;
+  }
+
+  .searchBox__item {
+    padding: 0 20px;
+
+    &:last-child {
+      @include size(100%, 80px);
+      margin-top: 15px;
+    }
+  }
+
+  .searchBox__item-subtitle {
+    font-size: rem(30px);
+  }
+
+  .searchBox__item-text {
+    font-size: rem(30px);
+  }
+
+  .searchBox__item-arrow {
+    @include size(20px, 10px);
+    margin-top: 20px;
+  }
+
+  .searchBox__item-search {
+    font-size: rem(40px);
+  }
+
+  .headerContent {
+    position: static;
+    margin-left: 50px;
+  }
+
+  .headerContent__theme {
+    font-size: rem(72px);
+    margin-bottom: 40px;
+  }
+
+  .headerContent__descr {
+    font-size: rem(40px);
+    padding-bottom: 50px;
+  }
+
+  .headerContent__icons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .headerContent__content-item {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+}
