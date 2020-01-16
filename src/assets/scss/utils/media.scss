@@ -137,4 +137,110 @@
     width: 30%;
     margin-bottom: 30px;
   }
+
+  .tour-header__title {
+    font-size: rem(70px);
+  }
+
+  .tour-header__descr {
+    font-size: rem(40px);
+  }
+
+  .tour-content {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .tour-content__card {
+    width: 35%;
+    height: 420px;
+  }
+
+  .tour-content__card:last-child {
+    .tour-content__card-icons {
+      margin-top: 55px;
+    }
+  }
+
+  .cities {
+    font-size: rem(32px);
+  }
+
+  .focusedCity {
+    font-size: rem(80px);
+  }
+
+  .cities-img__item-main {
+    @include positionImg(10px, 35px, 100);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(-40px, 220px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(-80px, 450px, 97);
+  }
+
+  .cities-link {
+    font-size: rem(40px);
+    @include positionImg(-60px, -200px, 98);
+  }
+
+  .section-places__header-title {
+    font-size: rem(70px);
+  }
+
+  .section-places__header-descr {
+    font-size: rem(40px);
+  }
+
+  .section-places__type {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .section-places__card {
+    flex-direction: column;
+    align-items: space-between;
+
+    .section-places__card-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .adapt-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: $tableWidth) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+}
+
+@media screen and (max-width: $phoneWidth) {
+
 }
