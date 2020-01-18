@@ -15,9 +15,20 @@
   align-items: center;
 }
 
+#nav {
+  display: flex;
+  flex-basis: 100%;
+}
+
+.navigation__inner {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 100%;
+}
+
 .nav {
   display: flex;
-  flex-basis: 80%;
+  flex-basis: 100%;
   justify-content: space-around;
   align-items: center;
 
@@ -45,13 +56,14 @@
 
 .nav__addition {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-basis: 22%;
+  align-items: center;
 }
 
 .help::after {
   content: '|';
-  padding-left: 12%;
+  padding-left: 20%;
   color: #ffffff;
   position: relative;
   top: 3px;
