@@ -268,6 +268,106 @@
   }
 }
 
+@media screen and (max-width: 1100px) {
+
+  .log {
+    @include size(140px, 70px);
+  }
+
+  .nav {
+
+    a {
+      font-size: rem(33px);
+    }
+  }
+
+  .nav__item:last-child {
+  
+    &::after {
+      top: -2px;
+    }
+  }
+
+  .login {
+    @include size(140px, 70px);
+    font-size: rem(33px);
+  }
+
+  .headerContent__theme {
+    font-size: rem(70px);
+  }
+
+  .headerContent__icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .headerContent__content-item {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+
+  .tour-content {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .tour-content__card {
+    width: 30%;
+    height: 420px;
+  }
+
+  .tour-content__card:last-child {
+    .tour-content__card-icons {
+      margin-top: 55px;
+    }
+  }
+
+  .cities-img__item-main {
+    @include positionImg(-20px, 100px, 100);
+  }
+  
+  .cities-img__item-second {
+    @include positionImg(-160px, 370px, 99);
+  }
+  
+  .cities-img__item-third {
+    @include positionImg(50px, 40px, 97);
+  }
+  
+  .cities-link {
+    @include positionImg(-90px, 285px, 98);
+  }
+
+  .section-places__header-title {
+    font-size: rem(70px);
+  }
+
+  .section-places__header-descr {
+    font-size: rem(40px);
+  }
+
+  .section-places__type {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .section-places__card {
+    flex-direction: column;
+    align-items: space-between;
+
+    .section-places__card-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .adapt-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 @media screen and (max-width: $phoneWidth) {
 
   $elastic: (position: left,
@@ -430,16 +530,67 @@
   .nav__addition,
   .nav__ul {
     flex-direction: column;
-    justify-content: space-between;
+   justify-content: flex-start;
     align-items: flex-start;
     padding: 20px;
+    flex-basis: 0;
   }
 
   .login {
-    margin: 20px;
+    margin-top: 40px;
   }
 
   .headerContent__icons {
+    display: none;
+  }
+
+  .searchBox__item-arrow {
+    margin-left: 20px;
+  }
+
+  .tour-content__card {
+    width: 70%;
+  }
+
+  .tour-btn {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  .cities__text {
+    display: none;
+  }
+
+  .focusedCity {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cities-img__item-main {
+    @include positionImg(-30px, 65px, 100);
+    width: 350px;
+  }
+  
+  .cities-img__item-second {
+    @include positionImg(-70px, 25px, 99);
+    width: 300px;
+  }
+  
+  .cities-img__item-third {
+    @include positionImg(-100px, 180px, 97);
+    width: 200px;
+  }
+  
+  .cities-link {
+    @include positionImg(50px, -40px, 98);
+
+    &::after {
+      content: '';
+    }
+  }
+
+  .section-places__type {
     display: none;
   }
 }
