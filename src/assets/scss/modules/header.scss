@@ -43,15 +43,41 @@
   justify-content: space-around;
 }
 
-.nav__item:last-child {
+.more {
   color: #9a6c71;
 
-  &::after {
+  .dot::after {
     content: url(../img/3_nokta.png);
     padding-left: 10px;
     position: relative;
     top: -5px;
   }
+
+  .triangle::after {
+    content: url(../img/Rounded_Rectangle_1.png);
+    padding-left: 10px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+.moreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  @include size(150px, 100px);
+  border-radius: 20px;
+  top: 110px;
+  right: 505px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
 }
 
 .nav__addition {
@@ -77,6 +103,33 @@
   background-color: transparent;
   cursor: pointer;
   @include font;
+}
+
+.modal {
+  position: fixed;
+  z-index: 110;
+  left: 0;
+  top: 0;
+  @include size(100%);
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__content {
+  background-color: #555e8aee;
+  margin: 20% auto;
+  padding: 10px;
+  border: 18px solid #888888;
+  width: 30%;
+  text-align: center;
+  @include font;
+}
+
+.close {
+  color: #b33333;
+  float: right;
+  font-style: 28px;
+  font-weight: $bold;
 }
 
 .line {
