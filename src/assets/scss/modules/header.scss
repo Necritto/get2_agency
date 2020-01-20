@@ -134,7 +134,8 @@
   font-weight: 400;
 }
 
-.form input[ type = "text"], .form input[type = "password"] {
+.form input[ type="text"],
+.form input[type="password"] {
   border: 0;
   background: none;
   display: block;
@@ -149,12 +150,13 @@
   transition: 0.25s ease;
 }
 
-.form input[ type = "text"]:focus, .form input[type = "password"]:focus {
+.form input[ type="text"]:focus,
+.form input[type="password"]:focus {
   width: 80%;
   background-color: #6899C4;
 }
 
-.form input[ type = "submit"] {
+.form input[ type="submit"] {
   border: 0;
   background: none;
   display: block;
@@ -169,8 +171,20 @@
   cursor: pointer;
 }
 
-.form input[ type = "submit"]:hover {
+.form input[ type="submit"]:hover {
   background-color: #9CC83C;
+}
+
+.logErr,
+.passErr {
+  position: absolute;
+  border: 2px solid #000000;
+  @include size(300px, 50px);
+  @include font;
+  font-size: rem(35px);
+  text-transform: none;
+  background-color: hsla(208, 13%, 19%, 0.897);
+  z-index: 111;
 }
 
 .line {
