@@ -1,3 +1,5 @@
+// Menu for phones
+
 const $btn = document.querySelector('#show');
 const $nav = document.querySelector('#nav');
 
@@ -11,6 +13,8 @@ document.addEventListener('scroll', function (e) {
   $nav.classList.remove('active');
 });
 
+// Additional navbar
+
 const more = $nav.querySelector('.more');
 const moreItem = $nav.querySelector('.moreItem');
 moreItem.classList.add('hide');
@@ -22,6 +26,8 @@ more.addEventListener('click', (e) => {
   moreItem.classList.toggle('show');
 });
 
+//  Login window
+
 const login = $nav.querySelector('.login');
 
 login.addEventListener('click', modal);
@@ -30,18 +36,20 @@ function modal() {
   const div = document.createElement('div');
   div.classList.add('modal');
   div.innerHTML = `
-    <div class="modal__content">
-      <span class="close">&times;</span>
-      <p>Login</p>
-    </div>
+    <form action="" class="form">
+      <h2>Login</h2>
+      <input type="text" placeholder="Login" required>
+      <input type="password" placeholder="********" required>
+      <input type="submit" value="Log in">
+    </form>
   `;
   login.parentElement.append(div);
 
-  const span = div.querySelector('.close');
-
-  span.addEventListener('click', () => {
-    div.style.display = 'none';
-    document.body.style.overflow = '';
+  document.addEventListener('click', (e) => {
+    if(e.target.nodeName === 'DIV') {
+      div.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   });
 
   document.body.style.overflow = 'hidden';
