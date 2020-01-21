@@ -28,8 +28,14 @@ more.addEventListener('click', (e) => {
 
   // Additional navbar positioning
 
+  function createElementsUnder(anchor, elem) {
+    let coords = getCoords(anchor);
 
+    elem.style.left = coords.left - anchor.offsetWidth / 5 + 'px';
+    elem.style.top = coords.top + (anchor.offsetHeight - 10) +'px';
+  }
 
+  createElementsUnder(more, moreItem);
 });
 
 //  Login window
