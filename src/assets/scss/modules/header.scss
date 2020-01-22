@@ -123,6 +123,18 @@
   border-radius: 150px;
 }
 
+.regForm {
+  @include size(100%);
+  border-radius: 0;
+}
+
+.close {
+  @include font;
+  font-size: 100px;
+  z-index: 110;
+  transform: translateX(90vw);
+}
+
 .form h2 {
   @include font;
   color: #ffffff;
@@ -130,8 +142,14 @@
   font-weight: 400;
 }
 
+.form p {
+  @include font;
+  text-transform: none;
+}
+
 .form input[ type="text"],
-.form input[type="password"] {
+.form input[type="password"],
+.form input[type="email"] {
   border: 0;
   background: none;
   display: block;
@@ -147,7 +165,8 @@
 }
 
 .form input[ type="text"]:focus,
-.form input[type="password"]:focus {
+.form input[type="password"]:focus,
+.form input[type="email"]:focus {
   width: 300px;
   background-color: #6899C4;
 }
