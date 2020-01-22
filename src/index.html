@@ -33,8 +33,31 @@
               <div class="nav__addition">
                 <p class="help"><a href="#">Help</a></p>
                 <p class="reg"><a href="#">Register</a></p>
+                <div class="registr modal hide">
+                  <form action="/" class="form regForm" method="POST">
+                    <h2>Welcome to Get2 Travel</h2>
+                    <p>To register, fill in the fields below.</p>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Login" required>
+                    <span class="logErr hide"></span>
+                    <input type="password" placeholder="********" required>
+                    <span class="passErr hide"></span>
+                    <input type="submit" value="Register">
+                  </form>
+                  <span class="close">&times;</span>
+                </div>
               </div>
               <button class="login">Login</button>
+              <div class="logModal modal hide">
+                <form action="/" class="form" method="GET">
+                  <h2>Login</h2>
+                  <input type="text" placeholder="Login" required>
+                  <span class="logErr hide"></span>
+                  <input type="password" placeholder="********" required>
+                  <span class="passErr hide"></span>
+                  <input type="submit" value="Log in">
+                </form>
+              </div>
             </nav>
           </div>
         </div>
