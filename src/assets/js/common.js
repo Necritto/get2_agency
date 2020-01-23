@@ -63,44 +63,76 @@ function modal() {
 
 // Form validate
 
-const logErr = $nav.querySelector('.logErr');
-const passErr = $nav.querySelector('.passErr');
-const form = $nav.querySelector('.form');
-const loginInput = $nav.querySelector('input[type="text"]');
-const passInput = $nav.querySelector('input[type="password"]');
+const [logErrReg, logErrLog] = $nav.querySelectorAll('.logErr');
+const [passErrReg, passErrLog] = $nav.querySelectorAll('.passErr');
+const [regForm, logForm] = $nav.querySelectorAll('.form');
+const [loginInputReg, loginInputLog] = $nav.querySelectorAll('input[type="text"]');
+const [passInputReg, passInputLog] = $nav.querySelectorAll('input[type="password"]');
+const [submitReg, submitLog] = $nav.querySelectorAll('input[type="submit"]');
 
-form.addEventListener('submit', (e) => {
-  let logMessages = [];
-  let passMessages = [];
+const logOptions = {
+  mainElem: logForm,
+  errLogElem: loginInputLog,
+  errPassElem: passInputLog,
+  logErr: logErrLog,
+  passErr: passErrLog,
+  submitLog
+};
 
-  (loginInput.value.length < 3) ? logMessages.push('Login must be at least 2 characters')
-    : (loginInput.value.length > 10) ? logMessages.push('Login must be less than 10 characters') : '';
+formValidate(logOptions);
 
-  (passInput.value.length < 8) ? passMessages.push('Password must be at least 8 characters')
-    : (passInput.value.length > 20) ? passMessages.push('Password must be less than 20 characters') : '';
+function formValidate(options) {
+  options.mainElem.addEventListener('submit', (e) => {
+    let logMessages = [];
+    let passMessages = [];
 
-  if (logMessages.length > 0 || passMessages.length > 0) {
-    e.preventDefault();
-    logErr.innerHTML = logMessages;
-    passErr.innerHTML = passMessages;
-  }
+    (options.errLogElem.value.length < 3) ? logMessages.push('Login must be at least 2 characters')
+      : (options.errLogElem.value.length > 10) ? logMessages.push('Login must be less than 10 characters') : '';
 
-  (!logMessages.length) ? logErr.style.display = 'none' : logErr.style.display = 'block';
-  (!passMessages.length) ? passErr.style.display = 'none' : passErr.style.display = 'block';
-});
+    (options.errPassElem.value.length < 8) ? passMessages.push('Password must be at least 8 characters')
+      : (options.errPassElem.value.length > 20) ? passMessages.push('Password must be less than 20 characters') : '';
+
+    if (logMessages.length > 0 || passMessages.length > 0) {
+      e.preventDefault();
+      options.logErr.innerHTML = logMessages;
+      options.passErr.innerHTML = passMessages;
+    }
+
+    (!logMessages.length) ? options.logErr.style.display = 'none' : options.logErr.style.display = 'block';
+    (!passMessages.length) ? options.passErr.style.display = 'none' : options.passErr.style.display = 'block';
+
+    if (!logMessages.length && !passMessages.length) {
+      options.errLogElem.style.margin = '30px auto';
+      options.errPassElem.style.margin = '30px auto';
+      options.submitLog.style.margin = '30px auto';
+    } else if (!logMessages.length) {
+      options.errLogElem.style.margin = '30px auto';
+      options.errPassElem.style.margin = '30px auto 10px auto';
+      options.submitLog.style.margin = '10px auto';
+    } else if (!passMessages.length) {
+      options.errLogElem.style.margin = '30px auto 10px auto';
+      options.errPassElem.style.margin = '10px auto';
+      options.submitLog.style.margin = '30px auto';
+    } else {
+      options.errLogElem.style.margin = '30px auto 10px auto';
+      options.errPassElem.style.margin = '10px auto';
+      options.submitLog.style.margin = '10px auto';
+    }
+  });
+}
 
 // Error validation message positioning
 
 function createMessageUnder(anchor, elem) {
   let coords = getCoords(anchor);
 
-  elem.style.left = coords.left + coords.offsetWidth + 'px';
+  elem.style.left = coords.left + coords.offsetWidth + getComputedStyle(anchor).marginLeft + 'px';
   elem.style.top = coords.top + coords.offsetHeight + 'px';
   anchor.style.marginBottom = 0;
 }
 
-createMessageUnder(loginInput, logErr);
-createMessageUnder(passInput, passErr);
+createMessageUnder(loginInputLog, logErrLog);
+createMessageUnder(passInputLog, passErrLog);
 
 function getCoords(elem) {
 
@@ -133,3 +165,17 @@ function registration() {
 
   document.body.style.overflow = 'hidden';
 }
+
+const regOptions = {
+  mainElem: regForm,
+  errLogElem: loginInputReg,
+  errPassElem: passInputReg,
+  logErr: logErrReg,
+  passErr: passErrReg,
+  submitReg
+};
+
+formValidate(regOptions);
+
+createMessageUnder(loginInputReg, logErrReg);
+createMessageUnder(passInputReg, passErrReg);
