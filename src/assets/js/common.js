@@ -179,3 +179,83 @@ formValidate(regOptions);
 
 createMessageUnder(loginInputReg, logErrReg);
 createMessageUnder(passInputReg, passErrReg);
+
+// SearchBox
+
+const searchBox = document.querySelector('.searchBox');
+const items = searchBox.querySelectorAll('select');
+
+searchBox.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (e.target.nodeName === 'BUTTON') {
+    let searchArray = [];
+
+    for (let item of items) {
+      searchArray.push(item.selectedOptions[0].value);
+    }
+
+    let searchObj = searchArray.reduce((acc, item, i) => {
+      acc[i] = item;
+      return acc;
+    }, {});
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(searchObj)
+    })
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .then(setTimeout(() => {
+        window.open('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS');
+      }, 1000));
+  }
+});
+
+//  Header icon dynamics
+
+const placeIcon = document.querySelector('.headerContent__icons .place');
+const timeIcon = document.querySelector('.headerContent__icons .time');
+const weatherIcon = document.querySelector('.headerContent__icons .weather');
+// const flightsIcon = document.querySelector('.headerContent__icons .flights');
+// const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
+
+clock();
+
+function clock() {
+  const date = new Date();
+  let gmt = date.getTimezoneOffset();
+  let hours = date.getUTCHours() + 2; // need to make a choice of time zone
+  let min = date.getMinutes();
+
+  if (hours < 10) hours = '0' + hours;
+  if (min < 10) min = '0' + min;
+  if (gmt === -180) gmt = '+2';
+
+  let timeStr = `${hours}:${min}, GMT${gmt}`;
+
+  timeIcon.innerHTML = timeStr;
+  setInterval(clock, 1000);
+}
+
+weather();
+
+function weather() {
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid,es&APPID=bf78e6fd2a2368ccd82e3e19af599950')
+    .then(response => response.json())
+    .then(data => {
+      let url = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
+      const img = document.createElement('img');
+      img.src = url;
+      img.style.width = '80px';
+      placeIcon.textContent = data.name;
+      weatherIcon.querySelector('.descr').textContent = data.weather[0]['description'];
+      weatherIcon.querySelector('.temp').innerHTML = `${Math.round(data.main.temp - 273)}°C`;
+      weatherIcon.querySelector('.image').appendChild(img);
+    });
+}
+
+

@@ -301,12 +301,13 @@
   @include font;
   text-transform: none;
   font-weight: $mainFontWeight;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
 }
 
 .headerContent__icons {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .headerContent__content-item {
@@ -325,9 +326,8 @@
     content: url(../img/timezone.png);
   }
 
-  .weather::before {
-    @include iconPosition(10px, 0, 10px);
-    content: url(../img/rain.png);
+  .image {
+    margin-right: -10px;
   }
 
   .flights::before {
