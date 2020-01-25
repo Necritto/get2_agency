@@ -214,3 +214,29 @@ searchBox.addEventListener('click', (e) => {
       }, 1000));
   }
 });
+
+//  Header icon dynamics
+
+// const placeIcon = document.querySelector('.headerContent__icons .place');
+const timeIcon = document.querySelector('.headerContent__icons .time');
+// const weatherIcon = document.querySelector('.headerContent__icons .weather');
+// const flightsIcon = document.querySelector('.headerContent__icons .flights');
+// const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
+
+clock();
+
+function clock() {
+  const date = new Date();
+  let gmt = date.getTimezoneOffset();
+  let hours = date.getUTCHours() + 2; // need to make a choice of time zone
+  let min = date.getMinutes();
+
+  if (hours < 10) hours = '0' + hours;
+  if (min < 10) min = '0' + min;
+  if (gmt === -180) gmt = '+2';
+
+  let timeStr = `${hours}:${min}, GMT${gmt}`;
+
+  timeIcon.innerHTML = timeStr;
+  setInterval(clock, 1000);
+}
