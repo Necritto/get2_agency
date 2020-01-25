@@ -217,9 +217,9 @@ searchBox.addEventListener('click', (e) => {
 
 //  Header icon dynamics
 
-// const placeIcon = document.querySelector('.headerContent__icons .place');
+const placeIcon = document.querySelector('.headerContent__icons .place');
 const timeIcon = document.querySelector('.headerContent__icons .time');
-// const weatherIcon = document.querySelector('.headerContent__icons .weather');
+const weatherIcon = document.querySelector('.headerContent__icons .weather');
 // const flightsIcon = document.querySelector('.headerContent__icons .flights');
 // const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
 
@@ -240,3 +240,22 @@ function clock() {
   timeIcon.innerHTML = timeStr;
   setInterval(clock, 1000);
 }
+
+weather();
+
+function weather() {
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=Madrid,es&APPID=bf78e6fd2a2368ccd82e3e19af599950')
+    .then(response => response.json())
+    .then(data => {
+      let url = `https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png`;
+      const img = document.createElement('img');
+      img.src = url;
+      img.style.width = '80px';
+      placeIcon.textContent = data.name;
+      weatherIcon.querySelector('.descr').textContent = data.weather[0]['description'];
+      weatherIcon.querySelector('.temp').innerHTML = `${Math.round(data.main.temp - 273)}°C`;
+      weatherIcon.querySelector('.image').appendChild(img);
+    });
+}
+
+
