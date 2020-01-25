@@ -179,3 +179,38 @@ formValidate(regOptions);
 
 createMessageUnder(loginInputReg, logErrReg);
 createMessageUnder(passInputReg, passErrReg);
+
+// SearchBox
+
+const searchBox = document.querySelector('.searchBox');
+const items = searchBox.querySelectorAll('select');
+
+searchBox.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  if (e.target.nodeName === 'BUTTON') {
+    let searchArray = [];
+
+    for (let item of items) {
+      searchArray.push(item.selectedOptions[0].value);
+    }
+
+    let searchObj = searchArray.reduce((acc, item, i) => {
+      acc[i] = item;
+      return acc;
+    }, {});
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(searchObj)
+    })
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .then(setTimeout(() => {
+        window.open('https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS');
+      }, 1000));
+  }
+});
