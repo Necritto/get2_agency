@@ -220,8 +220,8 @@ searchBox.addEventListener('click', (e) => {
 const placeIcon = document.querySelector('.headerContent__icons .place');
 const timeIcon = document.querySelector('.headerContent__icons .time');
 const weatherIcon = document.querySelector('.headerContent__icons .weather');
-// const flightsIcon = document.querySelector('.headerContent__icons .flights');
-// const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
+const flightsIcon = document.querySelector('.headerContent__icons .flights');
+const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
 
 clock();
 
@@ -258,4 +258,14 @@ function weather() {
     });
 }
 
+flight();
 
+function flight() {
+  flightsIcon.textContent = `+${Math.floor(Math.random() * (500 - (Math.random() * 2) + 1))} Flights`;
+}
+
+hotel();
+
+function hotel() {
+  hotelsIcon.textContent = `+${Math.floor(Math.random() * (100 - (Math.random() * 2) + 1))} Hotels`;
+}

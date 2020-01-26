@@ -314,7 +314,7 @@
   @include font;
   font-size: 40%;
   font-weight: $mainFontWeight;
-  text-transform: none;
+  text-transform: capitalize;
 
   .place::before {
     @include iconPosition(10px, 0, 10px);
