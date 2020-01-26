@@ -220,8 +220,8 @@ searchBox.addEventListener('click', (e) => {
 const placeIcon = document.querySelector('.headerContent__icons .place');
 const timeIcon = document.querySelector('.headerContent__icons .time');
 const weatherIcon = document.querySelector('.headerContent__icons .weather');
-// const flightsIcon = document.querySelector('.headerContent__icons .flights');
-// const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
+const flightsIcon = document.querySelector('.headerContent__icons .flights');
+const hotelsIcon = document.querySelector('.headerContent__icons .hotels');
 
 clock();
 
@@ -238,7 +238,7 @@ function clock() {
   let timeStr = `${hours}:${min}, GMT${gmt}`;
 
   timeIcon.innerHTML = timeStr;
-  setInterval(clock, 1000);
+  // setInterval(clock, 1000);
 }
 
 weather();
@@ -258,4 +258,56 @@ function weather() {
     });
 }
 
+flight();
 
+function flight() {
+  flightsIcon.textContent = `+${Math.floor(Math.random() * (500 - (Math.random() * 2) + 1))} Flights`;
+}
+
+hotel();
+
+function hotel() {
+  hotelsIcon.textContent = `+${Math.floor(Math.random() * (100 - (Math.random() * 2) + 1))} Hotels`;
+}
+
+//  Tours
+
+const tourBtn = document.querySelector('.tour-btn');
+
+tourBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('/tours');
+});
+
+
+// Cities
+
+const cities = document.querySelector('.cities-wrap');
+cities.style.cursor = 'pointer';
+
+cities.addEventListener('click', (e) => {
+  e.preventDefault();
+  const firstImg = document.querySelector('.cities-img__item-main');
+  const secondImg = document.querySelector('.cities-img__item-second');
+  const thirdImg = document.querySelector('.cities-img__item-third');
+  const linkText = document.querySelector('.cities-link span');
+
+  if (e.target.nodeName === 'P') {
+    [...cities.children].forEach(item => {
+      item.classList.remove('focusedCity');
+    });
+    e.target.classList.add('focusedCity');
+
+    const src = e.target.textContent.replace(/\s/g, '').toLowerCase();
+
+    firstImg.src = `./assets/img/${src}.jpg`;
+    secondImg.src = `./assets/img/${src}2.jpg`;
+    thirdImg.src = `./assets/img/${src}3.jpg`;
+
+    firstImg.alt = e.target.textContent;
+    secondImg.alt = e.target.textContent;
+    thirdImg.alt = e.target.textContent;
+
+    linkText.textContent = e.target.textContent;
+  }
+});
