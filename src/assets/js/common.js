@@ -238,7 +238,7 @@ function clock() {
   let timeStr = `${hours}:${min}, GMT${gmt}`;
 
   timeIcon.innerHTML = timeStr;
-  // setInterval(clock, 1000);
+  setInterval(clock, 1000);
 }
 
 weather();
@@ -309,5 +309,44 @@ cities.addEventListener('click', (e) => {
     thirdImg.alt = e.target.textContent;
 
     linkText.textContent = e.target.textContent;
+  }
+});
+
+// Places
+
+const placesType = document.querySelector('.section-places__type');
+const placesCards = document.querySelectorAll('.section-places__card-item');
+
+placesType.addEventListener('click', (e) => {
+  if (e.target.classList.contains('section-places__type-item') || e.target.nodeName === 'P') {
+    [...placesType.children].forEach(item => {
+      item.classList.remove('focusedPlaces');
+    });
+    if (e.target.nodeName === 'P') {
+      e.target.parentElement.classList.add('focusedPlaces');
+    }
+    if (e.target.classList.contains('section-places__type-item')) {
+      e.target.classList.add('focusedPlaces');
+      let randomCost = [Math.floor(Math.random() * (100 - (Math.random() * 2)))
+        , Math.floor(Math.random() * (50 - (Math.random() * 2)))
+        , Math.floor(Math.random() * (30 - (Math.random() * 2)))];
+
+      placesCards.forEach(item => {
+        item.innerHTML = `
+          <div class="section-places__card-item">
+            <img src="./assets/img/${e.target.textContent.trim().toLowerCase()}Hotel.jpg" alt="Hotel" class="section-places__cart-item-img">
+            <div class="section-places__card-item-wrap">
+              <h3 class="section-places__card-item-title">Some ${e.target.textContent.trim()} Hotel</h3>
+              <img class="rate" src="./assets/img/star.png" alt="star"></i>
+            </div>
+            <div class="section-places__card-item-icons">
+              <p class="section-places__card-item-cost flights">${randomCost[0]} €</p>
+              <p class="section-places__card-item-cost hotels">${randomCost[1]} €</p>
+              <p class="section-places__card-item-cost cars">${randomCost[2]} €</p>
+            </div>
+          </div>
+        `;
+      });
+    }
   }
 });
