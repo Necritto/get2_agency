@@ -238,7 +238,7 @@ function clock() {
   let timeStr = `${hours}:${min}, GMT${gmt}`;
 
   timeIcon.innerHTML = timeStr;
-  setInterval(clock, 1000);
+  //setInterval(clock, 1000);
 }
 
 weather();

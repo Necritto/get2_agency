@@ -1,4 +1,18 @@
+@media screen and (min-width: $desktopWidth) and (max-width: 1400px) {
+  .searchBox__item-text {
+    select {
+      padding: 0 15vw 0 0;
+    }
+  }
+}
+
 @media screen and (max-width: $desktopWidth) {
+
+  .searchBox__item-text {
+    select {
+      padding: 0 14vw 0 0;
+    }
+  }
 
   .tour-content__card-header {
     font-size: 60%;
@@ -73,8 +87,7 @@
   }
 
   .help::after {
-    padding-left: 0;
-    left: 12px;
+    content: '';
   }
 
   .login {
@@ -224,11 +237,15 @@
     }
   }
 
-  .nav__item:last-child {
+  .more {
 
-    &::after {
+    .dot::after {
       content: '...';
       opacity: 0.5;
+    }
+
+    .triangle::after {
+      content: url(../img/Rounded_Rectangle_1.png);
     }
   }
 
@@ -251,6 +268,10 @@
     width: 35%;
   }
 
+  .tour-content__card {
+    width: 35%;
+  }
+
   .cities {
     font-size: rem(30px);
   }
@@ -268,7 +289,7 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) and (min-width: 769px) {
 
   .log {
     @include size(140px, 70px);
@@ -282,7 +303,7 @@
   }
 
   .nav__item:last-child {
-  
+
     &::after {
       top: -2px;
     }
@@ -327,15 +348,15 @@
   .cities-img__item-main {
     @include positionImg(-20px, 100px, 100);
   }
-  
+
   .cities-img__item-second {
     @include positionImg(-160px, 370px, 99);
   }
-  
+
   .cities-img__item-third {
     @include positionImg(50px, 40px, 97);
   }
-  
+
   .cities-link {
     @include positionImg(-90px, 285px, 98);
   }
@@ -371,10 +392,10 @@
 @media screen and (max-width: $phoneWidth) {
 
   $elastic: (position: left,
-      width: 45,
-      backgroundColor: #86413c,
-      duration: 300,
-    );
+    width: 45,
+    backgroundColor: #86413c,
+    duration: 300,
+  );
 
   $position: map-get($elastic, 'position');
   $width: map-get($elastic, 'width');
@@ -526,18 +547,32 @@
     }
   }
 
-  .nav,
-  .nav__addition,
-  .nav__ul {
-    flex-direction: column;
-   justify-content: flex-start;
-    align-items: flex-start;
-    padding: 20px;
-    flex-basis: 0;
+  .searchBox__item-text {
+    select {
+      padding: 0 10vw 0 0;
+      font-size: rem(30px);
+    }
+  }
+
+  .nav__addition {
+    display: none;
   }
 
   .login {
-    margin-top: 40px;
+    display: none;
+  }
+
+  .section-city {
+    display: none;
+  }
+
+  .nav,
+  .nav__ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    flex-basis: 0;
   }
 
   .headerContent__icons {
@@ -561,36 +596,15 @@
     display: none;
   }
 
-  .focusedCity {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .cities-img__item-main {
-    @include positionImg(-30px, 65px, 100);
-    width: 350px;
-  }
-  
-  .cities-img__item-second {
-    @include positionImg(-70px, 25px, 99);
-    width: 300px;
-  }
-  
-  .cities-img__item-third {
-    @include positionImg(-100px, 180px, 97);
-    width: 200px;
-  }
-  
-  .cities-link {
-    @include positionImg(50px, -40px, 98);
-
-    &::after {
-      content: '';
-    }
-  }
-
   .section-places__type {
-    display: none;
+    flex-wrap: wrap;
+  }
+
+  .rate {
+    width: 100px;
+  }
+
+  .adapt-wrap {
+    flex-wrap: wrap;
   }
 }
