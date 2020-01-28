@@ -1,0 +1,610 @@
+@media screen and (min-width: $desktopWidth) and (max-width: 1400px) {
+  .searchBox__item-text {
+    select {
+      padding: 0 15vw 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: $desktopWidth) {
+
+  .searchBox__item-text {
+    select {
+      padding: 0 14vw 0 0;
+    }
+  }
+
+  .tour-content__card-header {
+    font-size: 60%;
+  }
+
+  .cities-wrap {
+
+    width: 95%;
+
+    .city2::before,
+    .city2::after,
+    .city4::before,
+    .city4::after,
+    .city6::before,
+    .city6::after {
+      content: '';
+    }
+  }
+
+  .cities-img__item-main {
+    @include positionImg(15px, 120px, 100);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(120px, -60px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(-430px, 745px, 97);
+  }
+
+  .cities-link {
+    @include positionImg(-90px, -225px, 98);
+  }
+
+  .section-places__type-item {
+    @include size(170px, 170px);
+  }
+
+  .section-places__card-item {
+    @include size(350px, 465px);
+  }
+
+  .section-places__card-item-title {
+    font-size: rem(40px);
+  }
+
+  .section-places__card-item-icons {
+    font-size: rem(32px);
+  }
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+  .log {
+    @include size(100px);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+
+    a {
+      font-size: rem(32px);
+    }
+  }
+
+  .nav__item:last-child {
+
+    &::after {
+      top: -2px;
+    }
+  }
+
+  .help::after {
+    content: '';
+  }
+
+  .login {
+    @include size(130px, 50px);
+    font-size: rem(32px);
+  }
+
+  .searchBox {
+    width: 35%;
+  }
+
+  .searchBox__item {
+    padding: 0 20px;
+
+    &:last-child {
+      @include size(100%, 80px);
+      margin-top: 15px;
+    }
+  }
+
+  .searchBox__item-subtitle {
+    font-size: rem(30px);
+  }
+
+  .searchBox__item-text {
+    font-size: rem(30px);
+  }
+
+  .searchBox__item-arrow {
+    @include size(20px, 10px);
+    margin-top: 20px;
+  }
+
+  .searchBox__item-search {
+    font-size: rem(40px);
+  }
+
+  .headerContent {
+    position: static;
+    margin-left: 50px;
+  }
+
+  .headerContent__theme {
+    font-size: rem(72px);
+    margin-bottom: 40px;
+  }
+
+  .headerContent__descr {
+    font-size: rem(40px);
+    padding-bottom: 50px;
+  }
+
+  .headerContent__icons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .headerContent__content-item {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+
+  .tour-header__title {
+    font-size: rem(70px);
+  }
+
+  .tour-header__descr {
+    font-size: rem(40px);
+  }
+
+  .tour-content {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .tour-content__card {
+    width: 35%;
+    height: 420px;
+  }
+
+  .tour-content__card:last-child {
+    .tour-content__card-icons {
+      margin-top: 55px;
+    }
+  }
+
+  .cities {
+    font-size: rem(32px);
+  }
+
+  .focusedCity {
+    font-size: rem(80px);
+  }
+
+  .cities-img__item-main {
+    @include positionImg(10px, 35px, 100);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(-40px, 220px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(-80px, 450px, 97);
+  }
+
+  .cities-link {
+    font-size: rem(40px);
+    @include positionImg(-60px, -200px, 98);
+  }
+
+  .section-places__header-title {
+    font-size: rem(70px);
+  }
+
+  .section-places__header-descr {
+    font-size: rem(40px);
+  }
+
+  .section-places__type {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .section-places__card {
+    flex-direction: column;
+    align-items: space-between;
+
+    .section-places__card-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .adapt-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: $tableWidth) {
+
+  .nav {
+
+    a {
+      font-size: rem(25px);
+    }
+  }
+
+  .more {
+
+    .dot::after {
+      content: '...';
+      opacity: 0.5;
+    }
+
+    .triangle::after {
+      content: url(../img/Rounded_Rectangle_1.png);
+    }
+  }
+
+  .nav__addition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .help::after {
+    content: '';
+  }
+
+  .searchBox {
+    width: 40%;
+    font-size: 40%;
+  }
+
+  .headerContent__content-item {
+    width: 35%;
+  }
+
+  .tour-content__card {
+    width: 35%;
+  }
+
+  .cities {
+    font-size: rem(30px);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(-40px, 150px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(-80px, 265px, 97);
+  }
+
+  .cities-link {
+    @include positionImg(-135px, -380px, 98);
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+
+  .log {
+    @include size(140px, 70px);
+  }
+
+  .nav {
+
+    a {
+      font-size: rem(33px);
+    }
+  }
+
+  .nav__item:last-child {
+
+    &::after {
+      top: -2px;
+    }
+  }
+
+  .login {
+    @include size(140px, 70px);
+    font-size: rem(33px);
+  }
+
+  .headerContent__theme {
+    font-size: rem(70px);
+  }
+
+  .headerContent__icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .headerContent__content-item {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+
+  .tour-content {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .tour-content__card {
+    width: 30%;
+    height: 420px;
+  }
+
+  .tour-content__card:last-child {
+    .tour-content__card-icons {
+      margin-top: 55px;
+    }
+  }
+
+  .cities-img__item-main {
+    @include positionImg(-20px, 100px, 100);
+  }
+
+  .cities-img__item-second {
+    @include positionImg(-160px, 370px, 99);
+  }
+
+  .cities-img__item-third {
+    @include positionImg(50px, 40px, 97);
+  }
+
+  .cities-link {
+    @include positionImg(-90px, 285px, 98);
+  }
+
+  .section-places__header-title {
+    font-size: rem(70px);
+  }
+
+  .section-places__header-descr {
+    font-size: rem(40px);
+  }
+
+  .section-places__type {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .section-places__card {
+    flex-direction: column;
+    align-items: space-between;
+
+    .section-places__card-item {
+      margin-bottom: 20px;
+    }
+  }
+
+  .adapt-wrap {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: $phoneWidth) {
+
+  $elastic: (position: left,
+    width: 45,
+    backgroundColor: #86413c,
+    duration: 300,
+  );
+
+  $position: map-get($elastic, 'position');
+  $width: map-get($elastic, 'width');
+  $backgroundColor: map-get($elastic, 'backgroundColor');
+  $duration: map-get($elastic, 'duration');
+
+  #show {
+    margin-top: 40px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    transform: translate(-50%, -50%);
+
+    span {
+      display: block;
+      background-color: #ffffff;
+      width: 40px;
+      height: 5px;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .navigation {
+    position: fixed;
+    width: $width*1vw;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 110;
+    transition-delay: $duration*1ms;
+
+    @if ($position==right) {
+      right: 0;
+    }
+
+    @else if ($position==left) {
+      left: 0;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+
+      .navigation__inner {
+        background-color: $backgroundColor;
+        transform: translate(0, 0);
+        transition: transform $duration*1ms linear, background-color 0s linear ($duration*2-1)*1ms;
+
+        &:after {
+          width: 300%;
+          border-radius: 50%;
+          animation: elastic ($duration/2)*1ms ease ($duration+0.5)*1ms both;
+        }
+      }
+    }
+  }
+
+  .navigation__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 999999;
+
+    @if ($position==right) {
+      transform: translate(100%, 0);
+    }
+
+    @else if ($position==left) {
+      transform: translate(-100%, 0);
+    }
+
+    transition: transform $duration*1ms linear,
+    background-color 0s linear $duration*1ms;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 100%;
+      top: 0;
+
+      @if ($position==right) {
+        left: 0;
+      }
+
+      @else if ($position==left) {
+        right: 0;
+      }
+
+      background-color: $backgroundColor;
+      border-radius: 50%;
+      z-index: -1;
+      transition: all $duration*1ms linear;
+
+    }
+  }
+
+  @keyframes elastic {
+    0% {
+      border-radius: 50%;
+    }
+
+    45% {
+      border-radius: 0;
+    }
+
+    65% {
+      @if ($position==right) {
+        border-top-left-radius: 40px 50%;
+        border-bottom-left-radius: 40px 50%;
+      }
+
+      @else if ($position==left) {
+        border-top-right-radius: 40px 50%;
+        border-bottom-right-radius: 40px 50%;
+      }
+    }
+
+    80% {
+      border-radius: 0;
+    }
+
+    90% {
+      @if ($position==right) {
+        border-top-left-radius: 20px 50%;
+        border-bottom-left-radius: 20px 50%;
+      }
+
+      @else if ($position==left) {
+        border-top-right-radius: 20px 50%;
+        border-bottom-right-radius: 20px 50%;
+      }
+    }
+
+    100% {
+      border-radius: 0;
+    }
+  }
+
+  .searchBox__item-text {
+    select {
+      padding: 0 10vw 0 0;
+      font-size: rem(30px);
+    }
+  }
+
+  .nav__addition {
+    display: none;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .section-city {
+    display: none;
+  }
+
+  .nav,
+  .nav__ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    flex-basis: 0;
+  }
+
+  .headerContent__icons {
+    display: none;
+  }
+
+  .searchBox__item-arrow {
+    margin-left: 20px;
+  }
+
+  .tour-content__card {
+    width: 70%;
+  }
+
+  .tour-btn {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  .cities__text {
+    display: none;
+  }
+
+  .section-places__type {
+    flex-wrap: wrap;
+  }
+
+  .rate {
+    width: 100px;
+  }
+
+  .adapt-wrap {
+    flex-wrap: wrap;
+  }
+}
